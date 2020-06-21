@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>xylophone</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <style>
+            .col{
+                padding-top: 40%;
+                padding-bottom: 40%; 
+                text-align: center;  
+                font-size: 100px;
+            
+               }
+               @keyframes {
+                    from {background-color: red;}
+                    to {background-color: yellow;}
+                }
+            .text{
+                text-align: center;
+                font-size: large;
+                background-color:sandybrown;
+
+            }
+            @media only screen and (max-width: 600px) {
+                .col{
+                    font-size:50px;
+                    padding-top: 72%;
+                    padding-bottom: 72%; 
+
+                }
+
+            } 
+        </style>
+
+    </head>
+    <body>
+
+        <script>
+
+            function sound(song){
+                var x = new Audio(song)
+                x.play();
+                
+            }
+            
+            document.getElementsByTagName("body")[0].onkeypress = function(event) {
+                let playlist = {
+                    "KeyA":"sounds/note1.wav",
+                    "KeyS":"sounds/note2.wav",
+                    "KeyD":"sounds/note3.wav",
+                    "KeyF":"sounds/note4.wav",
+                    "KeyG":"sounds/note5.wav",
+                    "KeyH":"sounds/note6.wav",
+                }
+                // console.log("Event Details = ",event)
+                let soundPlayer = new Audio(playlist[event.code])
+                soundPlayer.play()
+            }
+            
+        </script>
+        <div class="text"><b>Click on the letters or use respective keys for sounds</b></div>
+      <div class="container-fluid">
+            <div class="row">
+                <div class="col" style="background-color: red" onclick="sound('sounds/note1.wav')">A</div>
+                <div class="col" style="background-color:blue" onclick="sound('sounds/note2.wav')" >S</div>
+                <div class="col" style="background-color:purple" onclick="sound('sounds/note3.wav')">D</div>
+                <div class="col" style="background-color:yellow" onclick="sound('sounds/note4.wav')">F</div>
+                <div class="col" style="background-color:pink" onclick="sound('sounds/note5.wav')">G</div>
+                <div class="col" style="background-color:green" onclick="sound('sounds/note6.wav')">H</div>
+            </div>
+      </div>
+    </body>
+</html>
