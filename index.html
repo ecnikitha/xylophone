@@ -7,17 +7,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
             .col{
-                padding-top: 17%;
-                padding-bottom: 32%; 
+                height:100vh;
                 text-align: center;  
                 font-size: 100px;
+                padding-top: 20%;
             
                }
-               @keyframes {
-                    from {background-color: red;}
-                    to {background-color: yellow;}
-                }
             .text{
                 text-align: center;
                 font-size: large;
@@ -27,10 +27,11 @@
             @media only screen and (max-width: 600px) {
                 .col{
                     font-size:50px;
-                    padding-top: 72%;
-                    padding-bottom: 72%; 
-
+                    height:100vh;
+                    text-align:center;
+                    padding-top: 60%;
                 }
+            
 
             } 
         </style>
@@ -54,6 +55,7 @@
                     "KeyF":"sounds/note4.wav",
                     "KeyG":"sounds/note5.wav",
                     "KeyH":"sounds/note6.wav",
+                    "KeyJ":"sounds/note7.wav",
                 }
                 // console.log("Event Details = ",event)
                 let soundPlayer = new Audio(playlist[event.code])
@@ -70,6 +72,7 @@
                 <div class="col" style="background-color:yellow" onclick="sound('sounds/note4.wav')">F</div>
                 <div class="col" style="background-color:pink" onclick="sound('sounds/note5.wav')">G</div>
                 <div class="col" style="background-color:green" onclick="sound('sounds/note6.wav')">H</div>
+                <div class="col" style="background-color:orange" onclick="sound('sounds/note7.wav')">J</div>
             </div>
       </div>
     </body>
